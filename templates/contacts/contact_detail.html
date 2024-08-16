@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Details{% endblock title %}
+{% block content %}
+    <h2 class="display-6">Contact Details</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <dl class="dl-horizontal">
+                    <dt class="font-weight-bold">Photo</dt>
+                    <dd>
+                        <img src="{{ contact.photo.url }}" alt="{{ contact.get_full_name }}" width="300" class="img-fluid rounded">
+                    </dd>
+
+                    <dt class="font-weight-bold">First Name</dt>
+                    <dd>{{ contact.first_name }}</dd>
+                    <dt class="font-weight-bold">Last Name</dt>
+                    <dd>{{ contact.last_name }}</dd>
+
+                    <dt class="font-weight-bold">Email</dt>
+                    <dd>{{ contact.email }}</dd>
+                    <dt class="font-weight-bold">Phone</dt>
+                    <dd>{{ contact.phone }}</dd>
+                    <dt class="font-weight-bold">Mobile</dt>
+                    <dd>{{ contact.mobile }}</dd>
+
+                    <dt class="font-weight-bold">Address</dt>
+                    <dd>{{ contact.address }}</dd>
+                    <dt class="font-weight-bold">City</dt>
+                    <dd>{{ contact.city }}</dd>
+                    <dt class="font-weight-bold">State</dt>
+                    <dd>{{ contact.state }}</dd>
+                    <dt class="font-weight-bold">Zip</dt>
+                    <dd>{{ contact.zip }}</dd>
+                    <dt class="font-weight-bold">Country</dt>
+                    <dd>{{ contact.country }}</dd>
+                    
+                    <dt class="font-weight-bold">Notes</dt>
+                    <dd>{{ contact.notes }}</dd>
+                </dl>
+            </div>
+            <div class="col-md-6">
+                <div class="btn-group">
+                    <a href="{% url 'contacts:contact-update' contact.id %}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Edit</a>
+                    <a href="{% url 'contacts:contact-delete' contact.id %}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Delete</a>
+                    <a href="{% url 'contacts:contact-list' %}" class="btn btn-sm btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

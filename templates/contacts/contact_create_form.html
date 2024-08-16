@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Create Contact{% endblock title %}
+{% block content %}
+    <div class="card p-2" style="max-width: 500px; margin: 0 auto; background-color: #f9f9f9; border-radius: 5px;">
+        <h2 class="text-center my-3">Create Contact</h2>
+        <form action="#" method="post" enctype="multipart/form-data" class="form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Create</button>
+        </form>
+        <a href="{% url 'contacts:contact-list' %}" class="btn my-3 btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
+    </div>
+{% endblock content %}

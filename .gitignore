@@ -1,0 +1,11 @@
+# ignore all local files and caches
+.venv/
+.ruff_cache/
+__pycache__/
+db.sqlite3
+
+# ignore files in media/contacts
+media/contacts/
+
+# don't ignore media/contacts/default.png
+!media/contacts/default.png
